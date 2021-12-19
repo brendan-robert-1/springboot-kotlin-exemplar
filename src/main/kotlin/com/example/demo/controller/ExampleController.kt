@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RestController
 class ExampleController(
     private val exampleService: ExampleService
 ) {
-
-
     @GetMapping(
         path = ["/"],
         produces = [APPLICATION_JSON_VALUE]

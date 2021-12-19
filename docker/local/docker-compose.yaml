@@ -1,0 +1,21 @@
+---
+version: "3.5"
+
+services:
+  exemplar:
+    build:
+      context: ../../
+      dockerfile: docker/local/Dockerfile
+    image: exemplar/exemplar:latest
+    container_name: exemplar
+    ports:
+      - "8080:8080"
+    environment:
+      - ENV_VAR1=env_var1_value
+    tty: true
+    networks:
+      - api
+
+networks:
+  api:
+    name: api
